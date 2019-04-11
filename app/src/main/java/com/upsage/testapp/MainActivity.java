@@ -50,9 +50,7 @@ public class MainActivity extends AppCompatActivity {
         groceriesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String[] items = getResources().getStringArray(R.array.groceries);
-                String selected = items[position];
-                addToCart.setEnabled(!selectedItems.contains(selected));
+                checkForAddAbility(position);
             }
 
             @Override
@@ -60,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
                 parent.setSelection(0);
             }
         });
+    }
+
+    void checkForAddAbility(int position) {
+        String[] items = getResources().getStringArray(R.array.groceries);
+        String selected = items[position];
+        addToCart.setEnabled(!selectedItems.contains(selected));
     }
 
     public void addToCart(View view) {
@@ -77,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         selectedItems.remove(cartContentSpinner.getSelectedItemPosition());
         ((ArrayAdapter) cartContentSpinner.getAdapter()).notifyDataSetChanged();
         removeFromCartButton.setEnabled(selectedItems.size() > 0);
+        checkForAddAbility(groceriesSpinner.getSelectedItemPosition());
     }
 
     public void showReceipt(View view) {
