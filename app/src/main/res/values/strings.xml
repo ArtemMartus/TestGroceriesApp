@@ -1,0 +1,19 @@
+<!--
+  ~ Copyright (c) 2019 Artem Martus
+  -->
+
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="addToCartButtonName">В корзину</string>
+    <string name="remFromCartButtonName">Убрать</string>
+    <string name="showReceiptButtonName">Оформить</string>
+    <string name="cartContainsTitleTextName">Содержимое корзины:</string>
+    <string-array name="groceries">
+        <item>Хлеб</item>
+        <item>Масло</item>
+        <item>Яйцо</item>
+        <item>Молоко</item>
+        <item>Сыр</item>
+        <item>Пельмешки</item>
+    </string-array>
+</resources>
